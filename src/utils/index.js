@@ -1,4 +1,4 @@
-import { dirname, join } from 'path'
+import { dirname } from 'path'
 import { fileURLToPath } from 'url'
 
 export const getFilename = (url) => fileURLToPath(url)
