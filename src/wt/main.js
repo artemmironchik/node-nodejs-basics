@@ -29,7 +29,9 @@ const createWorker = (filename, workerData) => new Promise((resolve) => {
 })
 
 const performCalculations = async () => {
-    const workerPromises = Array.from({ length: cpus().length }, (_, index) => createWorker(pathToWorker, START_NUM + index))
+    const workerPromises = Array.from(
+        { length: cpus().length }, 
+        (_, index) => createWorker(pathToWorker, START_NUM + index))
 
     const result = await Promise.all(workerPromises)
 
